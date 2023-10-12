@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <style>
+        .calculator{
+            margin-left: 90px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .display{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .buttons{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .buttons button{
+            height: 80px;
+            width: 80px;
+            padding: 5px;
+            margin: 10px;
+            border-radius: 7px;
+            border-color: aqua;
+            background-color: aqua;
+            font-size: 20px;
+        }
+        .row{
+            display: flex;
+            flex-direction: row;
+        }
+        .display input{
+            width: 380px;
+            height: 40px;
+            font-size: 20px;
+            border-radius: 7px;
+            border-color: aqua;
+        }
+        #result{
+            width: 380px;
+            height: 40px;
+            font-size: 20px;
+            border-radius: 7px;
+            border-color: aqua;
+            border-width: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <div>
+                <form>
+                    <input type="text" name="expression" id="expression">
+                </form>
+            </div>
+            <div id="result"></div>
+        </div>
+        <div class="buttons">
+            <div class="row">
+                <div><button onclick="input('7')">7</button></div>
+                <div><button onclick="input('8')">8</button></div>
+                <div><button onclick="input('9')">9</button></div>
+                <div><button onclick="input('/')">/</button></div>
+            </div>
+            <div class="row">
+                <div><button onclick="input('4')">4</button></div>
+                <div><button onclick="input('5')">5</button></div>
+                <div><button onclick="input('6')">6</button></div>
+                <div><button onclick="input('*')">*</button></div>
+            </div>
+            <div class="row">
+                <div><button onclick="input('1')">1</button></div>
+                <div><button onclick="input('2')">2</button></div>
+                <div><button onclick="input('3')">3</button></div>
+                <div><button onclick="input('-')">-</button></div>
+            </div>
+            <div class="row">
+                <div><button onclick='input("0")'>0</button></div>
+                <div><button onclick="del()">del</button></div>
+                <div><button onclick="input('+')">+</button></div>
+                <div><button id="cal" onclick="calculate()">=</button></div>
+            </div>
+            <div class="row">
+                <div><button onclick='allclear()'>AC</button></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let expression=document.getElementById("expression");
+        function calculate(){
+            expression.value=eval(expression.value);
+        }
+        function input(symbol){
+            expression.value=expression.value+symbol;
+        }
+        function del(){
+            expression.value=expression.value.slice(0,expression.value.length-1);
+        }
+        function allclear(){
+            expression.value="";
+        }
+    </script>
+</body>
+</html>
