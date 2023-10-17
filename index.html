@@ -3,13 +3,11 @@
 <head>
     <title>Calculator</title>
     <style>
+        body{
+            background-color: rgb(190, 224, 208);
+        }
         .calculator{
             margin-left: 90px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .display{
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -40,25 +38,19 @@
             border-radius: 7px;
             border-color: aqua;
         }
-        #result{
-            width: 380px;
-            height: 40px;
-            font-size: 20px;
-            border-radius: 7px;
-            border-color: aqua;
-            border-width: 2px;
-        }
     </style>
 </head>
 <body>
     <div class="calculator">
+        <div>
+            <h2 style="font-size: 30px;">Calculator</h2>
+        </div>
         <div class="display">
             <div>
                 <form>
-                    <input type="text" name="expression" id="expression">
+                    <input type="text" name="expression" id="expression" autofocus>
                 </form>
             </div>
-            <div id="result"></div>
         </div>
         <div class="buttons">
             <div class="row">
